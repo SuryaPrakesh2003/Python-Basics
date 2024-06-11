@@ -1,0 +1,351 @@
+write a program to check whether the year is leap or not
+year = int(input())
+if (year%4 == 0) and (year%100 != 0) or (year%400 == 0):
+    print(year,"is a leap year")
+else:
+    print(year,"is not a leap year")
+
+---------------------------------------------------------------------------------
+
+write a program to get even or odd withou using arithmetic operator
+n = int(input())
+m = int(input())
+if n&1 == 0:
+    print("even")
+else:
+    print("odd")
+
+---------------------------------------------------------------------------------
+
+write a programto get multiplication of two numbers without using * operator
+
+1) n = int(input())
+   m = int(input())
+   print(n/(1/m))
+
+2)n = int(input())
+  m = int(input())
+  sum=0
+  for i in range(0,m):
+      sum = sum+n
+  print(sum)
+
+------------------------------------------------------------------------------------------
+
+write a program to divide the two numbers without using /,//,% with remainder
+a = int(input())
+b = int(input())
+i = 0
+while a>=b:
+    a=a-b
+    i+=1
+    print(i,a)
+
+-------------------------------------------------------------------------------------------
+
+check whether no is prime or not
+
+a = int(input())
+for i in range(2,a):
+    if (a%i == 0):
+        print("not a prime")
+        break;
+else:
+    print("prime")
+
+------------------------------------------------------------------------------------------------
+                              13-02-2024
+----------------------------------------------------------------------------------------------
+                              FUNCTIONS
+
+def cr(a:int,b:int)->int:
+    print(a+b)
+a = '8'
+b = '9'
+print(cr(a,b))
+
+output 89
+
+
+def cr(a:int,b:int)->int:
+    print(a+b)
+a = 8
+b = 9
+print(cr(a,b))
+
+output : 17
+-------------------------------------------------------------------------------------------
+
+def cr(*b,a):
+    print(a,b)
+cr(6,8,6,5,a = 4)
+
+output : 4 (6, 8, 6, 5)
+
+------------------------------------------------------------------------------------------
+
+for loop in strings
+
+s = input()
+#for var in collection
+for i in s:
+    print(i)
+for i in range(len(s)):
+    print(i,s[i])
+
+output : mani
+m
+a
+n
+i
+0 m
+1 a
+2 n
+3 i
+
+-----------------------------------------------------------------------------------------
+
+slicing a string
+ 
+s = "asdffghjklm"
+print(s[1:6:2],s[:6:],s[::-1])
+
+output : sfg asdffg mlkjhgffdsa
+
+-------------------------------------------------------------------------------------------
+
+string functions 
+s = " jgf hgf d"
+print(s.capitalize())
+print(s.title())
+print(s.upper())
+print(s.lower())
+print(s.swapcase())
+
+output :  jgf hgf d
+ Jgf Hgf D
+ JGF HGF D
+ jgf hgf d
+ JGF HGF D
+
+s = " jgf hgf d"
+print(s.islower())
+print(s.isascii())
+print(s.isdecimal())
+
+output : 
+True 
+True 
+False
+
+s = " jgf hgf d"
+print(s.index('h',3,8))
+print(s.count('h'))
+print(s.rindex('h'))
+print(s.find('z'))
+
+output : 5
+1
+5
+-1
+
+s = " jgf hgf abdh"
+print(s.startswith('ab',8)) #position
+
+output : False
+
+s = " jgf hgf abdh"
+print(s.split())
+print(s.split('h',maxsplit=1))
+print(s.partition('h'))
+
+
+a = 8
+b = 7
+print(f"addition of {a} and {b} is {a+b}")
+ 
+output : addition of 8 and 7 is 15
+
+
+a = 8
+b = 7
+print("addition of {0} and {2} is {1}".format(a,a+b,b))
+
+----------------------------------------------------------------------------
+          14/02/2024
+---------------------------------------------------------------------------
+                      List
+
+excepting a string list from a user
+l = input().split()
+print(l,type(l))
+
+output
+4 5 6 7
+['4','5','6','7'] <class 'List'>
+
+to print the integers in a list
+
+l = input().split()
+for i in range(len(l)):
+    l[i] = int(l[i])
+print(l,type(l))
+
+output :
+4 5 6 7 
+[4, 5, 6, 7] <class 'list'>
+
+l =[int(i) for i in input().split()]
+print(l,type(l))
+
+4 5 6 7 
+[4, 5, 6, 7] <class 'list'>
+
+by using map function
+
+l =list(map(int,input().split()))
+print(l,type(l))
+
+4 5 6 7 
+[4, 5, 6, 7] <class 'list'>
+
+l = [3, 5, 7, 8]
+l = list(map(lambda x:x*x,l))
+print(l)
+
+output : 
+[9, 25, 49, 64]
+
+l = [3, 5, 7, 8]
+l = list(filter(lambda x:x%2 == 0,l))
+print(l)
+
+output : [8]
+--------------------------------------------------------------------------
+
+                list functions
+
+l = [3, 5, 7, 8]
+l.append("abcd")
+print(l)
+l.extend("abcd")
+print(l)
+l.insert(0,9)
+print(l)
+
+ output : [3, 6, 0, 8, 6, 'abc']
+[3, 6, 0, 8, 6, 'abc', 'a', 'b', 'c']
+[8, 3, 6, 0, 8, 6, 'abc', 'a', 'b', 'c']
+
+l = [3, 5,0, 7, 8]
+l.pop()
+print(l)
+l.pop(0)
+print(l)
+l.remove(0)
+print(l)
+l.clear()
+print(l)
+
+output : 
+[3, 5,0,7]
+[5, 0, 7]
+[5, 7]
+[]
+
+l = [3,6,0,8,6]
+l.sort(reverse = True)
+print(l)
+print(sorted(l),l)
+
+output:
+[8, 6, 6, 3, 0]
+[0, 3, 6, 6, 8] [8, 6, 6, 3, 0]
+
+l = ["hfh","dfgh","fghj","hg","ufrgh"]
+l.sort(key = len)
+print(l)
+a = [[5,6],[0,9,8],[3,6,5],[0,0]]
+print(sorted(a,key = sum))
+print(sorted(a,key = lambda x:x[1]))
+
+output : 
+['hgkgi', 'h', 'fif', 'ff']
+[[0, 0], [5, 6], [3, 6, 5], [0, 9, 6]]
+[[0, 0], [5, 6], [3, 6, 5], [0, 9, 6]]
+
+
+                           dictionaries 
+
+a = {8,0,5,9}
+b = {0,7,3,2}
+print(a.union(b),a,b)
+print(a|b,a,b)
+print(a.update(b),a,b)
+
+
+output : 
+{0, 2, 3, 5, 7, 8, 9} {8, 0, 5, 9} {0, 2, 3, 7}
+{0, 2, 3, 5, 7, 8, 9} {8, 0, 5, 9} {0, 2, 3, 7}
+None {0, 2, 3, 5, 7, 8, 9} {0, 2, 3, 7}
+
+
+                    intersection update
+a = {8,0,5,9}
+b = {0,7,3,2}
+print(a.intersection(b),a,b)
+print(a&b,a,b)
+print(a.intersection_update(b),a,b)
+
+output : 
+
+{0} {8, 0, 5, 9} {0, 2, 3, 7}
+{0, 2, 3, 5, 7, 8, 9} {8, 0, 5, 9} {0, 2, 3, 7}
+None {0} {0, 2, 3, 7}
+
+                    difference
+
+a = {8,0,5,9}
+b = {0,7,3,2}
+print(a.difference(b),a,b)
+print(a-b,a,b)
+print(a.difference_update(b),a,b)
+
+output :
+{8, 9, 5} {8, 0, 5, 9} {0, 2, 3, 7}
+{0, 2, 3, 5, 7, 8, 9} {8, 0, 5, 9} {0, 2, 3, 7}
+None {8, 5, 9} {0, 2, 3, 7}
+ 
+                   symmetric difference
+
+a = {8,0,5,9}
+b = {0,7,3,2}
+print(a.symmetric_difference(b),a,b)
+print(a-b,a,b)
+print(a.symmetric_difference_update(b),a,b)
+
+output : 
+{2, 3, 5, 7, 8, 9} {8, 0, 5, 9} {0, 2, 3, 7}
+{0, 2, 3, 5, 7, 8, 9} {**8, 0, 5, 9} {0, 2, 3, 7}
+None {2, 3, 5, 7, 8, 9} {0, 2, 3, 7}
+
+                           superset/subset
+a = {8,0,5,9,7}
+b = {0,7}
+print(a.issubset(b),a<b,a<=b)
+print(a.issuperset(b),a>b,a>=b)
+
+output : 
+
+False False False
+True True True
+
+
+
+
+
+
+
+
+
+
